@@ -18,13 +18,20 @@ Key stories from the exploration:
 <li>The spread of loan return are approximately the same for all Income Range. However, the numbers of loans are where they differ. Middle class tend to get more loans approved. This makes sense because they need money for expenses, the higher income people usually do not need to take out loan. The spread of loan return in this case are equivalent because the loans are approved because the borrowers would be able to pay back the loan at a certain level.</li>
 <li>The spread of loan returns appears to decline fairly consistently over the years from 2009 to 2014. This may be due to the economic downturn of 2009, when lenders likely had to deal with more defaults, thus decreasing minimum expected returns. At the same time, lenders likely expected to be compensated for these risks with higher interest rates, thus increasing maximum estimated returns. The Income Range visualization further proves my point. We can see that there were minimal to none of loans taken for those who are not employed and/or those with $0 income.</li>
 </ul>
-<p> I started my exploration of visualization with Tableau first. I downladed the data and imported to Tableau. I tried to explore any interesting relationship between different variables and I discovered some interesting relationship. Risk vs Return was the only thing that caught my interest. The risk are the income range and Prosper Rating in Numeric. My goal for both graphs is to make the graph less busy- turn estimated return to percentage form. Also, since the dataset is huge, I had to clean up the data and perform aggregation so dimple and d3 won't crash.
+<p> I started my exploration of visualization with Tableau first. I downladed the data and imported to Tableau. I tried to explore any interesting relationship between different variables and I discovered some interesting relationship. Risk vs Return was the only thing that caught my interest. The risk are the income range and Prosper Rating in Numeric. My goal for both graphs is to make the graph less busy- turn estimated return to percentage form. Also, since the dataset is huge, I had to clean up the data and perform aggregation so dimple and d3 won't crash.</p>
 
+Income Range vs Return 
+<br>![Preview](https://github.com/jtsou/Data-Visualization-with-d3/blob/master/Income%20Range%20vs%20return%20with%20prosper%20rating.png)<br>
+Prosper Rating vs Return 
+<br>![Preview](https://github.com/jtsou/Data-Visualization-with-d3/blob/master/ProsperRating%20vs%20Return%20.png)<br>
+
+<p>
 I chose a scatterplot for median, minimum, and maximum estimated returns. Viewing these points along a common scale is the best visual encoding to ensure the viewer can differetiate in return across risk categories. Color coding is used to help the reader distinguish between median, minimum, and maximum estimated returns. I made a bubble chart with the median, since this is the focus of the visualization and I wanted the bubbles to emphasize how returns change as loan risk decreases.
 </p>
 </body>
 
 <h3> Feedback </h3>
+<p></p>
 <h3> Resources </h3>
 <ul>
 <li>Udacity Discussion Forum </li>
