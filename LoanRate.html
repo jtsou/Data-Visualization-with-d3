@@ -66,7 +66,7 @@
             .append("circle");
           var myChart = new dimple.chart(svg, data);
           //Set up x axis (Income Range)
-          var x = myChart.addCategoryAxis("x", "Income Range"); 
+          var x = myChart.addCategoryAxis("x", "IncomeRange"); 
           x.addOrderRule(["Not employed", "$0", "$1-24,999", "$25,000-49,999", "$50,000-74,999",'$75,000-99,999','$100,000+']); 
           x.title = "Income Range";
           x.fontSize = 12;
@@ -94,7 +94,7 @@
           y.fontSize = 12;
           y.title = "Estimated Return";
           //Add series for median (line and scatter), 1th, and 99th percentile estimated return
-          var median1 = myChart.addSeries("Median ", dimple.plot.line, [x,y]);
+          var median1 = myChart.addSeries("Median ", dimple.plot.bubble, [x,y]);
           var median2 = myChart.addSeries("Median ", dimple.plot.scatter, [x,y]);
           var y_num = myChart.addMeasureAxis("y", "Number of Loans");
           y_num.overrideMin = min_num_loans;
