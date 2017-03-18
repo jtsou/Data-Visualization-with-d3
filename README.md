@@ -45,6 +45,6 @@ In response to those comments, I decided to add more description next to x-axise
 <ul>
 <li>Udacity Discussion Forum </li>
 <li>Tableau visualization to explore data </li>
-<li>Started off my code with the d3.js code provided in course, but ended up changing majority of them</li>
+<li>Started with the code Udacity course provided, made changes here and there.</li>
 <li><a href="http://dimplejs.org/examples_index.html">http://dimplejs.org/examples_index.html</a></li>
 </ul>
