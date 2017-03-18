@@ -21,9 +21,9 @@ Key stories from the exploration:
 <p> I started my exploration of visualization with Tableau first. I downladed the data and imported to Tableau. I tried to explore any interesting relationship between different variables and I discovered some interesting relationship. Risk vs Return was the only thing that caught my interest. The risk are the income range and Prosper Rating in Numeric. My goal for both graphs is to make the graph less busy- turn estimated return to percentage form. Also, since the dataset is huge, I had to clean up the data and perform aggregation so dimple and d3 won't crash.</p>
 
 Income Range vs Return 
-<br>![Preview](https://github.com/jtsou/Data-Visualization-with-d3/blob/master/Income%20Range%20vs%20return%20with%20prosper%20rating.png)<br>
+<br>![Preview](https://github.com/jtsou/Data-Visualization-with-d3/blob/master/Tableau%20img/Income%20Range%20vs%20return%20with%20prosper%20rating.png)<br>
 Prosper Rating vs Return 
-<br>![Preview](https://github.com/jtsou/Data-Visualization-with-d3/blob/master/ProsperRating%20vs%20Return%20.png)<br>
+<br>![Preview](https://github.com/jtsou/Data-Visualization-with-d3/blob/master/Tableau%20img/ProsperRating%20vs%20Return%20.png)<br>
 
 <p>
 I chose a scatterplot for median, minimum, and maximum estimated returns. Viewing these points along a common scale is the best visual encoding to ensure the viewer can differetiate in return across risk categories. Color coding is used to help the reader distinguish between median, minimum, and maximum estimated returns. I made a bubble chart with the median, since this is the focus of the visualization and I wanted the bubbles to emphasize how returns change as loan risk decreases.
