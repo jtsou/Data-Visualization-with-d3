@@ -39,7 +39,7 @@ I chose a scatterplot for median, minimum, and maximum estimated returns. Viewin
 <li>When looking at Prosper Rating vs. Loan Return, I did not understand what does the x-axises mean.</li>
 </ul>
 
-In response to those comments, I decided to add more description next to x-axises. I also adjusted the legend size so the letters won't be cut off. 
+In response to those comments, I decided to add more description next to x-axises. I also adjusted the legend size so the letters won't be cut off. I put the files in here (https://github.com/jtsou/Data-Visualization-with-d3/tree/master/Index_final)
 </p>
 <h3> Resources </h3>
 <ul>
