@@ -31,7 +31,16 @@ I chose a scatterplot for median, minimum, and maximum estimated returns. Viewin
 </body>
 
 <h3> Feedback </h3>
-<p></p>
+<p>After creating the visualization, I came up with the versions in the BeforeFeedBack folder. (https://github.com/jtsou/Data-Visualization-with-d3/tree/master/DraftBeforeFeedBack), and I received the following feedback from my friends, who has little to none background in data visualization. Those are the audience that would most likely play around with my visualizations, so my friends' feedack is exactly what I wanted to know. The feedback are the follow:
+<ul>
+<li> The visualization is great but there is a part of it that needs improvement like where the legend is located, 
+  when I opened the file for loanrate.html, you can make out the words but the letters are cut-off.
+  It would probably be good to reduce the image size for both html files to make it fit. </li>
+<li>When looking at Prosper Rating vs. Loan Return, I did not understand what does the x-axises mean.</li>
+</ul>
+
+In response to those comments, I decided to add more description next to x-axises. I also adjusted the legend size so the letters won't be cut off. 
+</p>
 <h3> Resources </h3>
 <ul>
 <li>Udacity Discussion Forum </li>
