@@ -44,7 +44,8 @@ In response to those comments, I decided to add more description next to x-axise
 <h3> Resources </h3>
 <ul>
 <li>Udacity Discussion Forum </li>
-<li>Tableau visualization to explore data </li>
+<li>Tableau</li>
 <li>Started with the code Udacity course provided, made changes here and there.</li>
-<li><a href="http://dimplejs.org/examples_index.html">http://dimplejs.org/examples_index.html</a></li>
+<li><a href="http://dimplejs.org/examples_index.html">dimplejs.org</a></li>
+<li><a href="jsfiddle.net/ch2187dd/">Fiddle</a></li>
 </ul>
