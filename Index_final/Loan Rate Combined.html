@@ -26,7 +26,7 @@
         height: 400px;
       }
       div.chart-holder {
-        display: flex;
+        display: inline-flex;
         justify-content: center;
       }
       
@@ -47,7 +47,7 @@
           .append("div")
           .attr("class", "chart");
           var svg1 = dimple.newSvg(".chart", '100%', '100%');
-      /*
+      /*f
         Dimple.js Chart construction code
       */
           d3.select("svg1")
@@ -61,7 +61,7 @@
           .attr("x", 500)             
           .attr("y", 30)
           .attr("text-anchor", "middle")  
-          .style("font-size", "50px") 
+          .style("font-size", "40px") 
           .style("text-decoration", "underline")  
           .style("text-align", "center")
           .style("color", "black")
@@ -93,7 +93,7 @@
           y.overrideMin = min_axis;
           y.overrideMax = max_axis; 
           y.tickFormat = "%";
-          y.fontSize = 12;
+          y.fontSize = 11;
           y.title = "Estimated Return";
           //Add series for median (scatter), 1th, and 99th percentile estimated return
           
@@ -165,10 +165,6 @@
           function draw2(data) {
             "use strict";
           d3.select("body")
-          .append("div")
-          .append("h2")
-          .text("Income Range VS Loan Return");
-          d3.select("body")
           .select("div")
           .append("div")
           .attr("class", "chart-holder")
@@ -176,18 +172,17 @@
           .attr("class", "chart");
           var svg2 = dimple.newSvg(".chart", "100%", "100%");
           var myChart2 = new dimple.chart(svg2, data);
-          myChart2.setMargins(100, 100, 100, 100);
+          myChart2.setMargins(100,120, 50, 50);
           svg2.append("text")
           .attr("x", 500)             
-          .attr("y", 30)
+          .attr("y", 150)
           .attr("text-anchor", "middle")  
-          .style("font-size", "50px") 
+          .style("font-size", "40px") 
           .style("text-decoration", "underline")  
           .style("text-align", "center")
           .style("color", "black")
           .style("font-family", "Arial")
           .text("Income Range VS Loan Return");
-
           //Set up x axis (Income Range)
           var x = myChart2.addCategoryAxis("x", "IncomeRange"); 
           x.addOrderRule(["Not employed", "$0", "$1-24,999", "$25,000-49,999", "$50,000-74,999",'$75,000-99,999','$100,000+']); 
@@ -214,7 +209,7 @@
           y.overrideMin = min_axis;
           y.overrideMax = max_axis; 
           y.tickFormat = "%";
-          y.fontSize = 12;
+          y.fontSize = 11;
           y.title = "Estimated Return";
 
 
@@ -262,8 +257,6 @@
           .text(function(d) {
               return d;
           });
-
-
           //When clicking the year, transisiton the viz to that year
           buttons.on("click", function(d) {
             d3.select(".years_buttons")
