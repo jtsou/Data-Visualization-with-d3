@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <div id="chartContainer">
     <meta charset="utf-8">
     <script src="http://d3js.org/d3.v4.min.js"></script>
     <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
@@ -12,7 +13,7 @@
 
       div.years_buttons {
         display: flex;
-        justify-content: center;
+        justify-content: left;
         padding: 20px;
       }
       div.years_buttons div {
@@ -26,7 +27,7 @@
         height: 400px;
       }
       div.chart-holder {
-        display: inline-flex;
+        display: flex;
         justify-content: center;
       }
       
@@ -46,7 +47,7 @@
           .attr("class", "chart-holder")
           .append("div")
           .attr("class", "chart");
-          var svg1 = dimple.newSvg(".chart", '100%', '100%');
+          var svg1 = dimple.newSvg("#chartContainer", 1000, 500);
       /*f
         Dimple.js Chart construction code
       */
@@ -56,7 +57,7 @@
             .enter()
             .append("circle");
           var myChart1 = new dimple.chart(svg1, data);
-          myChart1.setMargins(100, 50, 100, 50); 
+          myChart1.setMargins(100, 150, 100, 50); 
           svg1.append("text")
           .attr("x", 500)             
           .attr("y", 30)
@@ -67,7 +68,7 @@
           .style("color", "black")
           .style("font-family", "Arial")
           .text("Prosper Rating VS Loan Return");
-                   //Set up x axis (Prosper Rating)
+                  //Set up x axis (Prosper Rating)
           var x = myChart1.addCategoryAxis("x", "ProsperRating"); 
           x.addOrderRule(["HR", "E", "D", "C", "B",'A','AA']); 
           x.fontSize = 12;
@@ -121,7 +122,7 @@
           myChart1.assignColor("99 Percentile", "purple");
           
 
-          var legend = myChart1.addLegend(5, 5, 360, 20, "left", [percentile_99, median, percentile_1]);
+          var legend = myChart1.addLegend(15, 100, 360, 40, "left", [percentile_99, median, percentile_1]);
           legend.horizontalAlign = "right";
           legend.fontSize = 12;
           
@@ -157,9 +158,9 @@
               .style("color", "grey");
             myStoryboard.goToFrame(d);
           });
-
+          
           myChart1.draw();
-          var myChart1 = d3.select("#area1").append("svg1")
+          var myChart1 = d3.select("#area1").append("svg1");
         };
 
           function draw2(data) {
@@ -170,9 +171,9 @@
           .attr("class", "chart-holder")
           .append("div")
           .attr("class", "chart");
-          var svg2 = dimple.newSvg(".chart", "100%", "100%");
+          var svg2 = dimple.newSvg("#chartContainer", 1000, 500);
           var myChart2 = new dimple.chart(svg2, data);
-          myChart2.setMargins(100,120, 50, 50);
+          myChart2.setMargins(100,200, 50, 40);
           svg2.append("text")
           .attr("x", 500)             
           .attr("y", 150)
@@ -238,7 +239,7 @@
           myChart2.assignColor("99 Percentile", "purple");
           
 
-          var legend = myChart2.addLegend(15, 70, 360, 50, "left", [percentile_99,,median1, percentile_1]);
+          var legend = myChart2.addLegend(15, 170, 360, 40, "left", [percentile_99,,median1, percentile_1]);
           legend.horizontalAlign = "right";
           legend.fontSize = 12;
           
@@ -258,13 +259,13 @@
               return d;
           });
           //When clicking the year, transisiton the viz to that year
-          buttons.on("click", function(d) {
+        buttons.on("click", function(d) {
             d3.select(".years_buttons")
               .selectAll("div")
               .transition()
               .duration(500)
               .style("color", "black")
-              .style("background", 'lightgreen');
+              .style("background", "lightgreen");
             d3.select(this)
               .transition()
               .duration(500)
@@ -273,8 +274,9 @@
             myStoryboard.goToFrame(d);
           });
           myChart2.draw();
+          var myChart2 = d3.select("#area2").append("svg2");
         };
-        var myChart2 = d3.select("#area2").append("svg2")
+        
     </script>
   </head>
     <body>
@@ -287,4 +289,5 @@
   d3.csv("prosperLoanData_aggregated_income.csv", draw2);
   </script>
 </body>
+</div>
 </html>
