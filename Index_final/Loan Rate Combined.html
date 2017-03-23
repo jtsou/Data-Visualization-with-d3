@@ -13,7 +13,9 @@
 
       div.group2 {
         display: flex;
-        justify-content: left;
+         margin:auto;
+          width:320px;
+          text-align:center;
         padding: 20px;
       }
       div.group2 div {
@@ -22,11 +24,13 @@
         margin: 7px;
         cursor: pointer;
       }
-      div.group1 {
-        display: flex;
-        justify-content: left;
-        padding: 20px;
-      }
+      .group1 {
+          display :flex;
+          margin:auto;
+          width:50%;
+          text-align:center;
+
+            }
       div.group1 div {
         background-color: lightgreen;
         padding: 3px;
@@ -42,17 +46,25 @@
         justify-content: center;
       }
 
-      #myChart1{
+      #myChartContainer1{
         float:left;
 
       }
-      #myChart2{
+      #myChartContainer2{
         float: left;
       }
       
     </style>
-    <div id="myChart1"> </div>
-    <div id="myChart2"> </div>
+    <div id="myChartContainer1"> 
+      <div id ="myChart1">
+      </div>
+
+    </div>
+    <div id="myChartContainer2"> 
+
+      <div id ="myChart2">
+      </div>
+    </div>
     <script type="text/javascript">
       function draw1(data) {
       
@@ -150,7 +162,7 @@
           myStoryboard.autoplay = false;
           //Add year buttons to the page
           var years = ["2009", "2010", "2011", "2012", "2013",'2014','All Years'];
-          var buttons = d3.select("div")
+          var buttons = d3.select("#myChart1")
           .append("div")
           .attr("class", "years_buttons")
           .attr("class", "group1")
@@ -180,7 +192,7 @@
           });
           
           myChart1.draw();
-          var myChart1 = d3.select("#area1").append("svg1");
+          var myChart1 = d3.select("#myChart1").append("svg1");
         };
 
           function draw2(data) {
@@ -235,8 +247,7 @@
 
 
           //Add series for median (line, scatter), 1th, and 99th percentile estimated return
-          var median1 = myChart2.addSeries("Median", dimple.plot.bubble, [x,y]);
-          var median2 = myChart2.addSeries("Median", dimple.plot.scatter, [x,y]);
+          var median2 = myChart2.addSeries("Median ", dimple.plot.scatter, [x,y]);
           var y_num = myChart2.addMeasureAxis("y", "Number of Loans");
           y_num.overrideMin = min_num_loans;
           y_num.overrideMax = max_num_loans;
@@ -259,7 +270,7 @@
           myChart2.assignColor("99 Percentile", "purple");
           
 
-          var legend = myChart2.addLegend(15, 170, 360, 40, "left", [percentile_99,,median1, percentile_1]);
+          var legend = myChart2.addLegend(15, 170, 360, 40, "left", [percentile_99,,median2, percentile_1]);
           legend.horizontalAlign = "right";
           legend.fontSize = 12;
           
@@ -268,7 +279,7 @@
           myStoryboard.autoplay = false;
           //Add year buttons to the page
           var years = ["2009", "2010", "2011", "2012", "2013",'2014'];
-          var buttons = d3.select("div")
+          var buttons = d3.select("#myChart2")
           .append("div")
           .attr("class", "years_buttons")
           .attr("class", "group2")
