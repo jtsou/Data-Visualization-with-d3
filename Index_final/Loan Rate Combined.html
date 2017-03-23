@@ -11,12 +11,23 @@
         fill: red;
       }
 
-      div.years_buttons {
+      div.group2 {
         display: flex;
         justify-content: left;
         padding: 20px;
       }
-      div.years_buttons div {
+      div.group2 div {
+        background-color: lightgreen;
+        padding: 3px;
+        margin: 7px;
+        cursor: pointer;
+      }
+      div.group1 {
+        display: flex;
+        justify-content: left;
+        padding: 20px;
+      }
+      div.group1 div {
         background-color: lightgreen;
         padding: 3px;
         margin: 7px;
@@ -29,6 +40,14 @@
       div.chart-holder {
         display: flex;
         justify-content: center;
+      }
+
+      #myChart1{
+        float:left;
+
+      }
+      #myChart2{
+        float: left;
       }
       
     </style>
@@ -47,7 +66,7 @@
           .attr("class", "chart-holder")
           .append("div")
           .attr("class", "chart");
-          var svg1 = dimple.newSvg("#chartContainer", 1000, 500);
+          var svg1 = dimple.newSvg("#myChart1", 1000, 500);
       /*f
         Dimple.js Chart construction code
       */
@@ -134,6 +153,7 @@
           var buttons = d3.select("div")
           .append("div")
           .attr("class", "years_buttons")
+          .attr("class", "group1")
           .selectAll("div")
           .data(years)
           .enter()
@@ -145,7 +165,7 @@
 
           //When clicking the year, transisiton the viz to that year
           buttons.on("click", function(d) {
-            d3.select(".years_buttons")
+            d3.select(".group1")
               .selectAll("div")
               .transition()
               .duration(500)
@@ -171,7 +191,7 @@
           .attr("class", "chart-holder")
           .append("div")
           .attr("class", "chart");
-          var svg2 = dimple.newSvg("#chartContainer", 1000, 500);
+          var svg2 = dimple.newSvg("#myChart2", 1000, 500);
           var myChart2 = new dimple.chart(svg2, data);
           myChart2.setMargins(100,200, 50, 40);
           svg2.append("text")
@@ -215,8 +235,8 @@
 
 
           //Add series for median (line, scatter), 1th, and 99th percentile estimated return
-          var median1 = myChart2.addSeries("Median ", dimple.plot.bubble, [x,y]);
-          var median2 = myChart2.addSeries("Median ", dimple.plot.scatter, [x,y]);
+          var median1 = myChart2.addSeries("Median", dimple.plot.bubble, [x,y]);
+          var median2 = myChart2.addSeries("Median", dimple.plot.scatter, [x,y]);
           var y_num = myChart2.addMeasureAxis("y", "Number of Loans");
           y_num.overrideMin = min_num_loans;
           y_num.overrideMax = max_num_loans;
@@ -251,6 +271,7 @@
           var buttons = d3.select("div")
           .append("div")
           .attr("class", "years_buttons")
+          .attr("class", "group2")
           .selectAll("div")
           .data(years)
           .enter()
@@ -260,7 +281,8 @@
           });
           //When clicking the year, transisiton the viz to that year
         buttons.on("click", function(d) {
-            d3.select(".years_buttons")
+            console.log("test")
+            d3.select(".group2")
               .selectAll("div")
               .transition()
               .duration(500)
@@ -274,7 +296,7 @@
             myStoryboard.goToFrame(d);
           });
           myChart2.draw();
-          var myChart2 = d3.select("#area2").append("svg2");
+          //var myChart2 = d3.select("#area2").append("svg2");
         };
         
     </script>
