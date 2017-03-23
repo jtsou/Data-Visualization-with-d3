@@ -1,5 +1,6 @@
 # Data Visualization with d3 on Prosper Rating
 <h3> SUMMARY </h3>
+<h4> No significant relationship between Prosper rating and income range</h4>
 <p>The visualization analyses data on loans. The data are taken from the peer-to-peer lending marketplace called Prosper. The loans originated from 2009 to 2014 and have two main pieces. The Prosper rating, which provides a measure of loan risk, and estimated return to lenders. Estimated return to lenders are essentially the interest received by lenders after costs and losses. In this case, my main focses are income range and prosper rating and their relationship with estimated return, respectively. I also added the numbers of loans in the graph in the form of <b>bars</b> to show how many loans were borrowed against those variables. </p>
 
 <h3> DESIGN </h3>
