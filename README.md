@@ -1,12 +1,12 @@
-# Data Visualization with d3
+# Data Visualization with d3 on Prosper Rating
 <h3> SUMMARY </h3>
-<p>The visualization analyses data on loans. The data are taken from the peer-to-peer lending marketplace called Prosper. The loans originated from 2009 to 2014 and have two main pieces. The Prosper rating, which provides a measure of loan risk, and estimated return to lenders. Estimated return to lenders are essential the interest received by lenders after costs and losses. However, my main focuses are income range and estimated returns instead. </p>
+<p>The visualization analyses data on loans. The data are taken from the peer-to-peer lending marketplace called Prosper. The loans originated from 2009 to 2014 and have two main pieces. The Prosper rating, which provides a measure of loan risk, and estimated return to lenders. Estimated return to lenders are essentially the interest received by lenders after costs and losses. In this case, my main focses are income range and prosper rating and their relationship with estimated return, respectively. I also added the numbers of loans in the graph in the form of <b>bars</b> to show how many loans were borrowed against those variables. </p>
 
 <h3> DESIGN </h3>
 <body>
 <p>When exploring the data, I thought, 'what information I would want to know if I were to lend money through Prosper.' The answer was obvious, the return. The return would be the median value as well, to avoid any outliers. I am a banker and I know that one big factor in return is the risk of default; in this sense, credit rating is important. However, a good credit rating isn't good enough, income needs to be considered as well. That is why I created two visualizations, one with ProsperRating and another with Income Range. I put Propser Rating on X-axis on Prosper Rating vs Loan Return graph and Income Range on x-axis on Income Range vs Loan Return graph. More importantly, the main piece of information I wanted to draw to the eye was how the median estimated return changes as credit risk decreases. 
 
-I also encoded another piece of information, the spread of expected return. That is why I included 1% and 99% for my code. Median itself does not tell the whole story, I want to know if I would get big return or losses. The bigger the spread, the more likely the bigger return or losses. 
+I also encoded another piece of information, the spread of expected return. That is why I included 1% and 99% for my code. 99% being the highest estimated return and 1% being the lowest estimated return. Median itself does not tell the whole story, I want to know if I would get big return or losses. The bigger the spread, the more likely the bigger return or losses. 
 
 Lastly, I included years in my visualizations, so the readers can tell how estimated return change over time, from 2009 to 2014. From that, we can get an idea of how directly related credit rating is to the loan return and how directly related income range is to loan return.</p>
 
@@ -26,7 +26,7 @@ Prosper Rating vs Return
 <br>![Preview](https://github.com/jtsou/Data-Visualization-with-d3/blob/master/Tableau%20img/ProsperRating%20vs%20Return%20.png)<br>
 
 <p>
-I chose a scatterplot for median, minimum, and maximum estimated returns. Viewing these points along a common scale is the best visual encoding to ensure the viewer can differetiate in return across risk categories. Color coding is used to help the reader distinguish between median, minimum, and maximum estimated returns. I made a bubble chart with the median, since this is the focus of the visualization and I wanted the bubbles to emphasize how returns change as loan risk decreases.
+I chose a scatterplot for median, minimum, and maximum estimated returns. Viewing these points along a common scale is the best visual encoding to ensure the viewer can differetiate in return across risk categories. Color coding is used to help the reader distinguish between median, minimum, and maximum estimated returns. I included median as lightblue, since this is the focus of the visualization and easier on the eyes to emphasize how returns change as loan risk decreases.
 </p>
 </body>
 
