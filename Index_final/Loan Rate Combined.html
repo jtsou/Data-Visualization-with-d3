@@ -10,11 +10,10 @@
      circle.dimple-series-1 {
         fill: red;
       }
-
       div.group2 {
         display: flex;
          margin:auto;
-          width:320px;
+          width:50%;
           text-align:center;
         padding: 20px;
       }
@@ -29,7 +28,6 @@
           margin:auto;
           width:50%;
           text-align:center;
-
             }
       div.group1 div {
         background-color: lightgreen;
@@ -45,13 +43,11 @@
         display: flex;
         justify-content: center;
       }
-
       #myChartContainer1{
         float:left;
-
       }
       #myChartContainer2{
-        float: left;
+        float: right;
       }
       
     </style>
@@ -78,7 +74,7 @@
           .attr("class", "chart-holder")
           .append("div")
           .attr("class", "chart");
-          var svg1 = dimple.newSvg("#myChart1", 1000, 500);
+          var svg1 = dimple.newSvg("#myChart1", 800, 500);
       /*f
         Dimple.js Chart construction code
       */
@@ -88,14 +84,14 @@
             .enter()
             .append("circle");
           var myChart1 = new dimple.chart(svg1, data);
-          myChart1.setMargins(100, 150, 100, 50); 
+          myChart1.setMargins(100, 150, 150, 50); 
           svg1.append("text")
-          .attr("x", 500)             
+          .attr("x", 150)             
           .attr("y", 30)
-          .attr("text-anchor", "middle")  
-          .style("font-size", "40px") 
+          .attr("text-anchor", "center")  
+          .style("font-size", "30px") 
           .style("text-decoration", "underline")  
-          .style("text-align", "center")
+          .style("text-align", "left")
           .style("color", "black")
           .style("font-family", "Arial")
           .text("Prosper Rating VS Loan Return");
@@ -129,7 +125,6 @@
           y.title = "Estimated Return";
           //Add series for median (scatter), 1th, and 99th percentile estimated return
           
-
           var median = myChart1.addSeries("Median ", dimple.plot.scatter, [x,y]);
           var y_num = myChart1.addMeasureAxis("y", "Number of Loans");
           y_num.overrideMin = min_num_loans;
@@ -152,7 +147,6 @@
           myChart1.assignColor("1 Percentile", "red");
           myChart1.assignColor("99 Percentile", "purple");
           
-
           var legend = myChart1.addLegend(15, 100, 360, 40, "left", [percentile_99, median, percentile_1]);
           legend.horizontalAlign = "right";
           legend.fontSize = 12;
@@ -174,7 +168,6 @@
               return d;
           });
           
-
           //When clicking the year, transisiton the viz to that year
           buttons.on("click", function(d) {
             d3.select(".group1")
@@ -194,7 +187,6 @@
           myChart1.draw();
           var myChart1 = d3.select("#myChart1").append("svg1");
         };
-
           function draw2(data) {
             "use strict";
           d3.select("body")
@@ -203,14 +195,14 @@
           .attr("class", "chart-holder")
           .append("div")
           .attr("class", "chart");
-          var svg2 = dimple.newSvg("#myChart2", 1000, 500);
+          var svg2 = dimple.newSvg("#myChart2", 700, 500);
           var myChart2 = new dimple.chart(svg2, data);
-          myChart2.setMargins(100,200, 50, 40);
+          myChart2.setMargins(100, 150, 150, 50);
           svg2.append("text")
-          .attr("x", 500)             
-          .attr("y", 150)
-          .attr("text-anchor", "middle")  
-          .style("font-size", "40px") 
+          .attr("x", 100)             
+          .attr("y", 30)
+          .attr("text-anchor", "center")  
+          .style("font-size", "30px") 
           .style("text-decoration", "underline")  
           .style("text-align", "center")
           .style("color", "black")
@@ -244,8 +236,6 @@
           y.tickFormat = "%";
           y.fontSize = 11;
           y.title = "Estimated Return";
-
-
           //Add series for median (line, scatter), 1th, and 99th percentile estimated return
           var median2 = myChart2.addSeries("Median ", dimple.plot.scatter, [x,y]);
           var y_num = myChart2.addMeasureAxis("y", "Number of Loans");
@@ -269,8 +259,7 @@
           myChart2.assignColor("1 Percentile", "red");
           myChart2.assignColor("99 Percentile", "purple");
           
-
-          var legend = myChart2.addLegend(15, 170, 360, 40, "left", [percentile_99,,median2, percentile_1]);
+          var legend = myChart2.addLegend(15, 100, 360, 40, "left", [percentile_99,,median2, percentile_1]);
           legend.horizontalAlign = "right";
           legend.fontSize = 12;
           
