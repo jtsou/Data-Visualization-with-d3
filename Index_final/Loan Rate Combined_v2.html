@@ -140,7 +140,6 @@
           y.fontSize = 11;
           y.title = "Estimated Return";
           //Add series for median (scatter), 1th, and 99th percentile estimated return
-          var median1 = myChart1.addSeries('Median ',dimple.plot.line);
           var median = myChart1.addSeries("Median ", dimple.plot.scatter, [x,y]);
           var y_num = myChart1.addMeasureAxis("y", "Number of Loans");
           y_num.overrideMin = min_num_loans;
