@@ -289,7 +289,7 @@
           var myStoryboard = myChart2.setStoryboard("Year");
           myStoryboard.autoplay = false;
           //Add year buttons to the page
-          var years = ["2009", "2010", "2011", "2012", "2013",'2014', 'All Years'];
+          var years = ["2009", "2010", "2011", "2012", "2013",'2014'];
           var buttons = d3.select("#myChart2")
           .append("div")
           .attr("class", "years_buttons")
@@ -303,7 +303,6 @@
           });
           //When clicking the year, transisiton the viz to that year
         buttons.on("click", function(d) {
-            console.log("test")
             d3.select(".group2")
               .selectAll("div")
               .transition()
