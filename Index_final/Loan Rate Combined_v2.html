@@ -134,7 +134,7 @@
           y.overrideMin = min_axis;
           y.overrideMax = max_axis; 
           y.tickFormat = ",.0%";
-          y.fontSize = 11;
+          y.fontSize = 12;
           y.title = "Estimated Return";
           //Add series for median (scatter), 1th, and 99th percentile estimated return
           var median = myChart1.addSeries("Median ", dimple.plot.scatter, [x,y]);
@@ -251,11 +251,10 @@
           y.overrideMax = max_axis; 
           y.tickFormat = '%';
           y.tickFormat = ',.0%';
-          y.fontSize = 11;
+          y.fontSize = 12;
           y.title = "Estimated Return";
           //Add series for median (bubble, scatter), 1th, and 99th percentile estimated return
-          var median = myChart2.addSeries('Median ', dimple.plot.bubble, [x,y]);
-          var median2 = myChart2.addSeries("Median ", dimple.plot.scatter, [x,y]);
+          var median = myChart2.addSeries("Median ", dimple.plot.scatter, [x,y]);
           var y_num = myChart2.addMeasureAxis("y", "Number of Loans");
           y_num.overrideMin = min_num_loans;
           y_num.overrideMax = max_num_loans;
@@ -266,7 +265,7 @@
           y_1.tickFormat = "%";
           y_1.overrideMin = min_axis;
           y_1.overrideMax = max_axis;        
-          var percentile_1 = myChart2.addSeries("1 Percentile(smallest estimated return)", dimple.plot.scatter, [x,y_1])
+          var percentile_1 = myChart2.addSeries("1 Percentile (smallest estimated return)", dimple.plot.scatter, [x,y_1])
           var y_99 = myChart2.addMeasureAxis("y", "99th Percentile");
           y_99.hidden = true;
           y_99.tickFormat = "%";
@@ -274,20 +273,21 @@
           y_99.overrideMax = max_axis;
           var percentile_99 = myChart2.addSeries("99 Percentile(biggest estimated return)", dimple.plot.scatter, [x,y_99]);
           //Color series and add legend
-          myChart2.assignColor("1 Percentile(smallest estimated return)", "red");
+          myChart2.assignColor("1 Percentile (smallest estimated return)", "red");
           myChart2.assignColor("99 Percentile(biggest estimated return)", "purple");
           myChart2.assignColor('# of Loans', 'lightgrey')
           myChart2.assignColor('Median ', 'darkBlue')
 
-          var legend = myChart2.addLegend(15, 70, 300, 40, "left", [percentile_99,median2, percentile_1]);
+          var legend = myChart2.addLegend(15, 70, 300, 40, "left", [percentile_99,median, percentile_1]);
           legend.horizontalAlign = "right";
           legend.fontSize = 12;
           
           //Set a storyboard to interact/animate by year
           var myStoryboard = myChart2.setStoryboard("Year");
           myStoryboard.autoplay = false;
+
           //Add year buttons to the page
-          var years = ["2009", "2010", "2011", "2012", "2013",'2014','All Years'];
+          var years = ["2009", "2010", "2011", "2012", "2013",'2014',"All Years"];
           var buttons = d3.select("#myChart2")
           .append("div")
           .attr("class", "years_buttons")
