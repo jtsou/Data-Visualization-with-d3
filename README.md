@@ -9,7 +9,7 @@
 
 I also encoded another piece of information, the spread of expected return. That is why I included 1% and 99% for my code. 99% being the highest estimated return and 1% being the lowest estimated return. Median itself does not tell the whole story, I want to know if I would get big return or losses. The bigger the spread, the more likely the bigger return or losses. 
 
-Lastly, I included years in my visualizations, so the readers can tell how estimated return change over time, from 2009 to 2014. From that, we can get an idea of how directly related credit rating is to the loan return and how directly related income range is to loan return.</p>
+Lastly, I included years in my visualizations, so the readers can tell how estimated return change over time, from 2009 to 2014. From that, we can get an idea of how directly related credit rating is to the loan return and how directly related income range is to loan return. However, I did not include 'All Years' for income range data visualization because it wouldn't make sense to do so. The distribution of estimated return over income range in all the years aggregated doesn't say much other than there is no siginificant impact.</p>
 
 Key stories from the exploration:
 <ul>
