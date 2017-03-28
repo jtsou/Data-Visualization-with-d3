@@ -10,11 +10,21 @@
      circle.dimple-series-1 {
         fill: red;
       }
+      div.h2.relative {
+        text-align: left;
+        color: black;
+        font-family: Arial;
+        text-decoration: underline;
+        font-size: 30px;
+        position:relative;
+        left: 30px;
+
+      }
       div.group2 {
         display: flex;
-         margin:auto;
-          width:60%;
-          text-align:center;
+        margin:auto;
+        width:60%;
+        text-align:center;
         padding: 20px;
       }
       div.group2 div {
@@ -23,7 +33,7 @@
         margin: 10px;
         cursor: pointer;
       }
-      .group1 {
+      div.group1 {
           display :flex;
           margin:auto;
           width:60%;
@@ -38,18 +48,19 @@
       div.chart {
         width: 1000px;
         height: 400px;
+
       }
       div.chart-holder {
         display: flex;
         justify-content: center;
+        float:left;
       }
       #myChartContainer1{
         float:left;
       }
       #myChartContainer2{
-        float: right;
+        float: left;
       }
-      
     </style>
     <div id="myChartContainer1"> 
       <div id ="myChart1">
@@ -62,20 +73,12 @@
       </div>
     </div>
     <script type="text/javascript">
-      d3.select("body")
-          .select("div")
+
+        d3.select("body")
           .append("div")
-          .attr("class", "chart-holder")
-          .append("div")
-          .attr("class", "chart");
-      var svg=dimple.newSvg('.chart',"2000", "200");
-      svg.append("text")
-          .attr("x", 500)             
-          .attr("y", 40)
-          .attr("text-anchor", "middle")  
-          .style("font-size", "40px") 
-          .style("text-decoration", "underline")  
+          .append("h2")
           .text("Prosper Rating and Income Range vs Estimated Return");
+
 
       function draw1(data) {
       
@@ -89,7 +92,7 @@
           .attr("class", "chart-holder")
           .append("div")
           .attr("class", "chart");
-        var svg1 = dimple.newSvg("#myChart1", 750, 500);
+        var svg1 = dimple.newSvg("#myChart1", 1000, 600);
 
       /*f
         Dimple.js Chart construction code
@@ -212,7 +215,7 @@
           .attr("class", "chart-holder")
           .append("div")
           .attr("class", "chart");
-          var svg2 = dimple.newSvg("#myChart2", 780, 500);
+          var svg2 = dimple.newSvg("#myChart2", 1000, 600);
           var myChart2 = new dimple.chart(svg2, data);
           myChart2.setMargins(100, 200, 200, 50);
           svg2.append("text")
@@ -256,7 +259,8 @@
           y.tickFormat = ',.0%';
           y.fontSize = 11;
           y.title = "Estimated Return";
-          //Add series for median (line, scatter), 1th, and 99th percentile estimated return
+          //Add series for median (bubble, scatter), 1th, and 99th percentile estimated return
+          var median = myChart2.addSeries('Median ', dimple.plot.bubble, [x,y]);
           var median2 = myChart2.addSeries("Median ", dimple.plot.scatter, [x,y]);
           var y_num = myChart2.addMeasureAxis("y", "Number of Loans");
           y_num.overrideMin = min_num_loans;
@@ -289,7 +293,7 @@
           var myStoryboard = myChart2.setStoryboard("Year");
           myStoryboard.autoplay = false;
           //Add year buttons to the page
-          var years = ["2009", "2010", "2011", "2012", "2013",'2014'];
+          var years = ["2009", "2010", "2011", "2012", "2013",'2014','All Years'];
           var buttons = d3.select("#myChart2")
           .append("div")
           .attr("class", "years_buttons")
@@ -314,14 +318,9 @@
               .duration(500)
               .style("background", "lightBlue")
               .style("color", "grey");
-            myStoryboard.goToFrame(d);
+              myStoryboard.goToFrame(d);
           });
           myChart2.draw();
-          x.shapes.selectAll("text").attr("transform",
-              function (d) {
-                return d3.select(this).attr("transform") + " translate(-3,3)rotate(-70,55,100)";
-              });
-
           var myChart2 = d3.select("#area2").append("svg2");
         };
         
