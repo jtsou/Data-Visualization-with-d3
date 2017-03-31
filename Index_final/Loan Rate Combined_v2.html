@@ -130,15 +130,15 @@
             return parseFloat(d['Number of Loans']);
           }); 
           //Set up y axis (Estimated Return)
-          var y = myChart1.addMeasureAxis("y", "Median");
+          var y = myChart1.addMeasureAxis('y', 'Median');
           y.overrideMin = min_axis;
           y.overrideMax = max_axis; 
-          y.tickFormat = ",.0%";
+          y.tickFormat = ',.0%';
           y.fontSize = 12;
           y.title = "Estimated Return";
-          //Add series for median (scatter), 1th, and 99th percentile estimated return
-          var mendian_bubble = myChart1.addSeries("Median ", dimple.plot.bubble, [x,y])
-          var median = myChart1.addSeries("Median ", dimple.plot.scatter, [x,y]);
+          //Add series for median (bubble), 1th, and 99th percentile estimated return
+
+          var median = myChart1.addSeries("Median ", dimple.plot.bubble, [x,y]);
           var y_num = myChart1.addMeasureAxis("y", "Number of Loans");
           y_num.overrideMin = min_num_loans;
           y_num.overrideMax = max_num_loans;
@@ -208,9 +208,6 @@
 
         };
 
-
-
-
           function draw2(data) {
             "use strict";
           d3.select("body")
@@ -263,8 +260,8 @@
           y.tickFormat = ',.0%';
           y.fontSize = 12;
           y.title = "Estimated Return";
-          //Add series for median (bubble, scatter), 1th, and 99th percentile estimated return
-          var median = myChart2.addSeries("Median ", dimple.plot.scatter, [x,y]);
+          //Add series for median (bubble), 1th, and 99th percentile estimated return
+          var median = myChart2.addSeries("Median ", dimple.plot.bubble, [x,y]);
           var y_num = myChart2.addMeasureAxis("y", "Number of Loans");
           y_num.overrideMin = min_num_loans;
           y_num.overrideMax = max_num_loans;
